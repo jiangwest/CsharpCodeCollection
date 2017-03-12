@@ -13,7 +13,7 @@ class Program
     {
         //简单MatchEvaluator应用
         string s = "1 12 3 5";
-        s = Regex.Replace(s, @"\d+", new MatchEvaluator(CorrectString), RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        s = Regex.Replace(s, @"\d+", new MatchEvaluator(CorrectString), RegexOptions.IgnoreCase);
         Console.WriteLine(s);
 
         //process function style,
@@ -22,7 +22,7 @@ class Program
         //3. give number serial to each parameters of function
         //e.g. extract the string like "function test(...)"
         string str = "int i1;       function bool test(int a,int b, string c);";
-        str = Regex.Replace(str, @"\sfunction\s+[^;]+", new MatchEvaluator(procFuncTest), RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        str = Regex.Replace(str, @"\sfunction\s+[^;]+", new MatchEvaluator(procFuncTest), RegexOptions.IgnoreCase);
         Console.WriteLine(str);
         Console.ReadLine();
     }
