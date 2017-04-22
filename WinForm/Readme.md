@@ -54,6 +54,22 @@ private void Form1_Load(object sender, EventArgs e)
 }
 ```	
 
+### 加载图片
+
+```
+Bitmap bit;//声明位图对象
+private void Form1_Load(object sender, EventArgs e)
+{
+    bit = new Bitmap("bg.png");//使用指定的图形实例化位图对象
+    bit.MakeTransparent(Color.Blue);//设置图形透明
+}
+
+private void Form1_Paint(object sender, PaintEventArgs e)
+{
+    e.Graphics.DrawImage((Image)bit, new Point(0, 0));//窗体获得焦点时绘制图形
+}
+```	
+
 ## labels
 
 ## TextBox
