@@ -1,5 +1,22 @@
 # WinForm Controls
 
+## Form
+
+创建子窗体
+
+```
+// first define a Form, eg., Form2
+Form2 frm = new Form2();//实例化Form2
+frm.MdiParent = this;//设置MdiParent属性，将当前窗体作为父窗体
+frm.Show();//使用Show方法打开窗体
+```
+
+### 窗体Layout
+
+```
+LayoutMdi(MdiLayout.TileHorizontal);//使用MdiLayout枚举实现窗体的水平平铺
+```
+
 ## labels
 
 ## TextBox
