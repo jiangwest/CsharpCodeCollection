@@ -17,6 +17,43 @@ frm.Show();//使用Show方法打开窗体
 LayoutMdi(MdiLayout.TileHorizontal);//使用MdiLayout枚举实现窗体的水平平铺
 ```
 
+### 启动窗口
+
+- 定义启动窗口
+
+```
+public partial class Form2 : Form
+{
+	...
+
+	private void Form2_Load(object sender, EventArgs e)
+	{
+	    this.FormBorderStyle = FormBorderStyle.None;//设置启动窗体为无标题栏窗体
+	    this.BackgroundImage = Image.FromFile("start.jpg");//设置启动窗体的背景图片
+	    this.BackgroundImageLayout = ImageLayout.Stretch;//设置图片自动适应窗体大小
+	    this.timer1.Start();//启动计时器
+	    this.timer1.Interval = 10000;//设置启动窗体停留时间
+	}
+
+	private void timer1_Tick(object sender, EventArgs e)
+	{	this.Close();//关闭启动窗体	}
+
+	private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+	{	    this.timer1.Stop();//关闭计时器	}
+}
+```    
+
+- 加载启动窗口
+
+```
+private void Form1_Load(object sender, EventArgs e)
+{
+    Form2 frm = new Form2();//实例化Form2窗体对象
+    frm.StartPosition = FormStartPosition.CenterScreen;//设置窗体居中显示
+    frm.ShowDialog();//显示Form2窗体
+}
+```	
+
 ## labels
 
 ## TextBox
