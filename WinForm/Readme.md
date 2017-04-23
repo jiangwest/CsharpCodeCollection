@@ -316,3 +316,34 @@ treeView1.SelectedImageIndex = 1;
 
 - `AfterSelect`事件
 
+```
+private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+{
+    //在AfterSelect事件中获取控件中选中节点显示的文本
+    label1.Text = "选择的部门：" + e.Node.Text;
+}
+```	
+
+## TabControl和TabPage
+
+- 分页
+
+添加选项卡 (Add TabPage)
+
+```
+string Title = "新增选项卡 " + (tabControl1.TabCount + 1).ToString();	//生成新增选项卡的名称
+TabPage MyTabPage = new TabPage(Title);//实例化TabPage
+//使用TabControl控件的TabPages 属性的Add方法添加新选项卡
+tabControl1.TabPages.Add(MyTabPage);
+```
+
+移除选项卡
+
+```
+//判断是否选择了要移除的选项卡
+if (tabControl.SelectedIndex == 0)
+	tabControl1.TabPages.Remove(tabControl.SelectedTab); //移除指定的选项卡
+```	    
+
+
+
