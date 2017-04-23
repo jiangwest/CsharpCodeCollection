@@ -227,5 +227,22 @@ private void richTextBoxText_LinkClicked(object sender, LinkClickedEventArgs e)
 
 - `SelectedIndexChanged`事件
 
+## CheckBox
+
+```
+foreach (Control ctl in this.Controls)//遍历窗体中的控件
+{
+	if (ctl.GetType().Name == "CheckBox")//判断控件类型是否是CheckBox
+	{
+	    CheckBox cbox = (CheckBox)ctl;//将遍历到的控件强制转换为CheckBox类型
+	    cbox.AutoEllipsis = true;//设置文本过长时，显示…
+	    cbox.CheckAlign = ContentAlignment.MiddleLeft;//设置文本居左对齐
+	    cbox.Checked = false;//设置复选框不选中
+	}
+}
+```	    
+
+- `CheckedChanged`事件
+
 
 ## ListBox和CheckedListBox
