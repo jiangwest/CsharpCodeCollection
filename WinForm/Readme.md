@@ -278,3 +278,41 @@ for (int i = 0; i < listBox1.SelectedItems.Count; i++)
 ```
 
 
+## ListView
+
+- 创建标题栏: `listView.Columns.Add("文件名");`
+- 设置ListView控件的View属性: `listView.View = View.SmallIcon;`
+- 建立组: `listView.Groups.Add(new ListViewGroup(...));`
+- 添加项目: `listView.Items.Add()`
+
+## TreeView
+
+```
+treeView.ExpandAll();//展开所有树节点
+treeView.CollapseAll();//折叠所有树节点
+```
+
+- TreeView一般都包含父节点和子节点
+
+```
+treeView1.ContextMenuStrip = contextMenuStrip1;//设置树控件的快捷菜单
+TreeNode TopNode = treeView1.Nodes.Add("公司");//建立一顶级节点
+//建立基础节点
+TreeNode ParentNode = new TreeNode("人事部");
+...
+TopNode.Nodes.Add(ParentNode1);//将基础节点添加到顶级节点中
+...
+TreeNode ChildNode = new TreeNode("C#部门");
+ParentNode.Nodes.Add(ChildNode);	//将子节点添加到对应的基础节点中
+//设置imageList控件中显示的图像
+imageList1.Images.Add(Image.FromFile("1.png"));
+//设置treeView的ImageList属性为imageList
+treeView.ImageList = imageList;
+//设置treeView1控件节点的图标在imageList1控件中的索引是0
+treeView1.ImageIndex = 0;
+//选择某个节点后显示的图标在imageList1控件中的索引是1
+treeView1.SelectedImageIndex = 1;
+```
+
+- `AfterSelect`事件
+
