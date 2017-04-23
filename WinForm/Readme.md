@@ -72,6 +72,12 @@ private void Form1_Paint(object sender, PaintEventArgs e)
 
 ## labels
 
+```
+label1.Font = new Font("楷体", 12);//设置label1控件的字体
+label1.Text = "明日科技";//设置label1控件显示的文字
+label1.ForeColor = Color.Red;//设置label1控件的字体颜色
+```
+
 ## TextBox
 
 - `Validating`事件
@@ -98,8 +104,8 @@ private void txtBoxEmpty_Validating(object sender, CancelEventArgs e)
 ```
 
 
-- `\r': 回车,使光标到行首
-- '\n': 换行，使光标下移一格
+- `\r`: 回车,使光标到行首
+- `\n`: 换行，使光标下移一格
 - `\r\n`:
     - Unix中每行结尾只有`<换行>`，即`\n`
     - Windows中每行结尾是`<换行><回车>`，即`\n\r`
@@ -114,6 +120,38 @@ void textBoxAge_KeyPress(object sender, KeyPressEventArgs e)
 - `e.handled=true`: 指示事件机制是否已处理事件
 - `Anchor`属性
 - `Dock`属性
+
+### 焦点focus转移
+
+```
+private void textBox1_KeyDown(object sender, KeyEventArgs e)
+{
+    if (e.KeyData == Keys.Enter)//判断是否按下了回车键
+    {
+	textBox2.Focus();//使textBox2文本框获取焦点
+    }
+}
+```
+
+### 隐藏输入字符 
+
+- 密码
+
+```
+textBox1.PasswordChar = '@';//设置文本框的PasswordChar属性为字符@
+textBox2.UseSystemPasswordChar = true;
+```
+
+## Button
+
+
+```
+button1.BackColor=Color.Orange;//设置背景颜色
+button1.FlatStyle = FlatStyle.Flat;//设置显示外观
+button1.Font = new Font("宋体", 9);//设置字体及大小
+button1.Text = "确定";//设置显示文本
+button1.TextAlign = ContentAlignment.MiddleCenter;//设置文本居中显示
+```
 
 ## RadioButton和CheckBox
 
