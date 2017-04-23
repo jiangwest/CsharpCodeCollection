@@ -346,4 +346,12 @@ if (tabControl.SelectedIndex == 0)
 ```	    
 
 
+## Others
 
+状态栏
+
+```
+//在状态栏上显示系统的当前时间
+toolStripStatusLabel.Text = "当前时间：" + DateTime.Now.ToLongTimeString();
+```
+	    
