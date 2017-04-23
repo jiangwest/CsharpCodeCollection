@@ -354,4 +354,35 @@ if (tabControl.SelectedIndex == 0)
 //在状态栏上显示系统的当前时间
 toolStripStatusLabel.Text = "当前时间：" + DateTime.Now.ToLongTimeString();
 ```
-	    
+
+## MessageBox
+
+```
+//返回用户点击按钮的枚举
+DialogResult dr = MessageBox.Show("消息信息", "标题", MessageBoxButtons.YesNoCancel);
+switch (dr)//使用switch语句判断用户点击了哪个按钮
+{
+	case DialogResult.Cancel: {...}    break;
+	case DialogResult.No:
+}
+```	    
+
+## 对话框
+
+- openFileDialog
+	- savaFileDialog
+	- folderBrowserDialog	
+	- fontDialog
+	- colorDialog
+
+```
+openFileDialog1.Filter = "*.txt|*.txt";
+DialogResult dr = openFileDialog1.ShowDialog();
+if (dr==DialogResult.OK)
+{
+	...
+}
+```
+
+## 时间控件 Timer
+
