@@ -225,7 +225,16 @@ private void richTextBoxText_LinkClicked(object sender, LinkClickedEventArgs e)
 - `comboBox.Items.Add()`: 为下拉列表赋值
 - `comboBox.Items.AddRange()`: 
 
-- `SelectedIndexChanged`事件
+- `SelectedIndexChanged`事件: 触发comboBox控件的选择项更改事件
+
+- 初始化设置: `Form_Load()`
+
+```
+comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;//设置控件的下拉框样式
+string[] str = new string[] { "总经理", "副总经理", "人事部经理", "财务部经理", "部门经理", "普通员工" };
+comboBox1.DataSource = str;//指定控件的数据源
+comboBox1.SelectedIndex = 0;//指定控件中默认选择第一项
+```	    
 
 ## CheckBox
 
@@ -246,3 +255,26 @@ foreach (Control ctl in this.Controls)//遍历窗体中的控件
 
 
 ## ListBox和CheckedListBox
+
+```
+//可以选择多项
+listBox.SelectionMode = SelectionMode.MultiExtended;
+
+//获取文件列表
+FolderBrowserDialog folderbrowser = new FolderBrowserDialog();//实例化浏览文件夹对话框
+if (folderbrowser.ShowDialog() == DialogResult.OK)//判断是否选择了要浏览的文件夹
+{
+	textBox1.Text = folderbrowser.SelectedPath;//获取选择的文件夹路径
+	DirectoryInfo dinfo = new DirectoryInfo(textBox1.Text);//使用获取的文件夹路径实例化DirectoryInfo类对象
+	FileSystemInfo[] finfo = dinfo.GetFileSystemInfos();//获取指定文件夹下的所有子文件夹及文件
+	listBox1.Items.AddRange(finfo);//将获取到的子文件夹及文件添加到ListBox控件中
+	label3.Text = "(" + listBox1.Items.Count + "项)";//获取ListBox控件中的项数
+}
+//多项选择
+for (int i = 0; i < listBox1.SelectedItems.Count; i++)
+{
+	label4.Text += listBox1.SelectedItems[i]+"、";//获取选择项
+}
+```
+
+
