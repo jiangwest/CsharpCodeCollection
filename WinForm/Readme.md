@@ -155,6 +155,25 @@ button1.TextAlign = ContentAlignment.MiddleCenter;//设置文本居中显示
 
 ## RadioButton和CheckBox
 
+
+## NumericUpDown控件
+
+```
+numericUpDown1.Minimum = 1;//设置控件的最小值为1
+numericUpDown1.Maximum = 20;//设置控件的最大值为20
+//设置控件的DecimalPlaces属性，使控件中的数值的小数点后显示两位数
+numericUpDown1.DecimalPlaces = 2;
+numericUpDown1.Increment = 1;//设置递增或递减的值
+numericUpDown1.InterceptArrowKeys = true;//设置用户可以通过向上、向下键选择值
+```
+
+- 事件触发: `ValueChange`
+
+### numericUpDown 键盘输入
+
+- Text和Value？
+
+
 ## GroupBox
 
 - GroupBox vs. RadioButton
@@ -201,6 +220,12 @@ private void richTextBoxText_LinkClicked(object sender, LinkClickedEventArgs e)
 ## List
 
 
+## ComboBox
+
+- `comboBox.Items.Add()`: 为下拉列表赋值
+- `comboBox.Items.AddRange()`: 
+
+- `SelectedIndexChanged`事件
 
 
 ## ListBox和CheckedListBox
